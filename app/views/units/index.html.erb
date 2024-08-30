@@ -1,0 +1,11 @@
+<h1>Equipment List</h1>
+
+<ul>
+  <% @units.each do |unit| %>
+    <li>
+      <%= link_to unit.name, unit %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Unit", new_unit_path %>
