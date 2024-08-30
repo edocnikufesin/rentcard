@@ -9,3 +9,40 @@
             turbo_confirm: :"Are you sure?"
         } %></li>
 </ul>
+
+<h2>Rates</h2>
+<% @unit.rates.each do |rate| %>
+  <p>
+    <strong>Daily rental rates:</strong>
+    <%= rate.dayrate %>
+  </p>
+
+  <p>
+    <strong>Weekly rental rates:</strong>
+    <%= rate.weekrate %>
+  </p>
+
+  <p>
+    <strong>Monthly rental rates:</strong>
+    <%= rate.monthrate %>
+  </p>
+<% end %>
+
+<h2>Add a rate:</h2>
+<%= form_with model: [ @unit, @unit.rates.build ] do |form| %>
+  <p>
+    <%= form.label :dayrate %><br>
+    <%= form.text_field :dayrate %>
+  </p>
+  <p>
+    <%= form.label :weekrate %><br>
+    <%= form.text_area :weekrate %>
+  </p>
+   <p>
+    <%= form.label :monthrate %><br>
+    <%= form.text_area :monthrate %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
