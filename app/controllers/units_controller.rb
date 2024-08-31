@@ -26,7 +26,7 @@ class UnitsController < ApplicationController
 
   def update
     @unit = Unit.find(params[:id])
-    if @init.update(unit_params)
+    if @unit.update(unit_params)
       redirect_to @unit
     else
       render :edit, status: :unprocessable_entity
@@ -44,5 +44,4 @@ class UnitsController < ApplicationController
     def unit_params
       params.require(:unit).permit(:name, :description)
     end
-
 end
