@@ -10,41 +10,12 @@
         } %></li>
 </ul>
 
-<h2>Rental rate:</h2>
 <% if @unit.rate.present? %>
-  <p>
-    <strong>Daily rental rates:</strong>
-    <%= @unit.rate.dayrate %>
-  </p>
-
-  <p>
-    <strong>Weekly rental rates:</strong>
-    <%= @unit.rate.weekrate %>
-  </p>
-
-  <p>
-    <strong>Monthly rental rates:</strong>
-    <%= @unit.rate.monthrate %>
-  </p>
+  <h2>Rental rate:</h2>
+  <%= render @unit.rate %>
 <% else %>
   <p>Call for rates for this unit.</p>
 <% end %>
 
 <h2>Add or update rate:</h2>
-<%= form_with model: [ @unit, @unit.rate || @unit.build_rate ] do |form| %>
-  <p>
-    <%= form.label :dayrate %><br>
-    <%= form.text_field :dayrate %>
-  </p>
-  <p>
-    <%= form.label :weekrate %><br>
-    <%= form.text_area :weekrate %>
-  </p>
-   <p>
-    <%= form.label :monthrate %><br>
-    <%= form.text_area :monthrate %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render "rates/form", unit: @unit %>

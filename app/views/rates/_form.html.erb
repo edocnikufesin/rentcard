@@ -1,0 +1,17 @@
+<%= form_with model: [ @unit, @unit.rate || @unit.build_rate ] do |form| %>
+  <p>
+    <%= form.label :dayrate %><br>
+    <%= form.text_field :dayrate %>
+  </p>
+  <p>
+    <%= form.label :weekrate %><br>
+    <%= form.text_area :weekrate %>
+  </p>
+   <p>
+    <%= form.label :monthrate %><br>
+    <%= form.text_area :monthrate %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

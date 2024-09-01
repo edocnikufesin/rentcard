@@ -1,3 +1,15 @@
-<p>
-  <strong>Daily Rate:</strong>
-  <%%>
+
+  <p>
+    <strong>Daily rental rates:</strong>
+    <%= @unit.rate.dayrate %>
+  </p>
+
+  <p>
+    <strong>Weekly rental rates:</strong>
+    <%= @unit.rate.weekrate %>
+  </p>
+
+  <p>
+    <strong>Monthly rental rates:</strong>
+    <%= @unit.rate.monthrate %>
+  </p>
