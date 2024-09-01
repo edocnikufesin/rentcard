@@ -5,10 +5,12 @@ class UnitsController < ApplicationController
 
   def show
     @unit = Unit.find(params[:id])
+    @rate = @unit.rate
   end
 
   def new
     @unit = Unit.new
+    @unit.build_rate
   end
 
   def create
@@ -42,6 +44,6 @@ class UnitsController < ApplicationController
 
   private
     def unit_params
-      params.require(:unit).permit(:name, :description)
+      params.require(:unit).permit(:name, :description, rate_attributes: [ :dayrate, :weekrate, :monthrate ])
     end
 end

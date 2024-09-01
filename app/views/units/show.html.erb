@@ -10,26 +10,28 @@
         } %></li>
 </ul>
 
-<h2>Rates</h2>
-<% @unit.rates.each do |rate| %>
+<h2>Rental rate:</h2>
+<% if @unit.rate.present? %>
   <p>
     <strong>Daily rental rates:</strong>
-    <%= rate.dayrate %>
+    <%= @unit.rate.dayrate %>
   </p>
 
   <p>
     <strong>Weekly rental rates:</strong>
-    <%= rate.weekrate %>
+    <%= @unit.rate.weekrate %>
   </p>
 
   <p>
     <strong>Monthly rental rates:</strong>
-    <%= rate.monthrate %>
+    <%= @unit.rate.monthrate %>
   </p>
+<% else %>
+  <p>Call for rates for this unit.</p>
 <% end %>
 
-<h2>Add a rate:</h2>
-<%= form_with model: [ @unit, @unit.rates.build ] do |form| %>
+<h2>Add or update rate:</h2>
+<%= form_with model: [ @unit, @unit.rate || @unit.build_rate ] do |form| %>
   <p>
     <%= form.label :dayrate %><br>
     <%= form.text_field :dayrate %>
