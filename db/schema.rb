@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_30_123247) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_02_014836) do
   create_table "rates", force: :cascade do |t|
     t.integer "dayrate"
     t.integer "weekrate"
@@ -24,6 +24,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_30_123247) do
   create_table "units", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
