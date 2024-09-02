@@ -7,9 +7,10 @@ Things you may want to cover:
 
 * ruby-3.3.4
 
-* System dependencies
+* Authentication from scratch following GoRails tutorial "Rails 7.1
+  Authentication From Scratch" 
 
-* Configuration
+* Test
 
 * Database creation
 
