@@ -1,5 +1,5 @@
 class Unit < ApplicationRecord
-  has_one :rate
+  has_one :rate, dependent: :destroy
   accepts_nested_attributes_for :rate, allow_destroy: true
 
   validates :name, presence: true

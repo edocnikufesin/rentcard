@@ -39,11 +39,11 @@ class UnitsController < ApplicationController
     @unit = Unit.find(params[:id])
     @unit.destroy
 
-    redirect_to route_path, status: :see_other
+    redirect_to units_path, status: :see_other
   end
 
   private
     def unit_params
-      params.require(:unit).permit(:name, :description, rate_attributes: [ :dayrate, :weekrate, :monthrate ])
+      params.require(:unit).permit(:name, :description, rate_attributes: [:id, :dayrate, :weekrate, :monthrate, :_destroy])
     end
 end
