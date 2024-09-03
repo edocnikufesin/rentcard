@@ -1,9 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+* App name: Rentcard
 
 * ruby-3.3.4
 
@@ -22,6 +19,7 @@ Things you may want to cover:
 
 * Followed tutorial www.ralfebert.com/tutorials/rails-deployment 
     - DigitalOcean droplet server
-    - Installed rbenv 
+    - Installed rbenv and Ruby
+    - Installed ufw, curl, git, nginx, postgresql, libpq-dev
 
 * ...
