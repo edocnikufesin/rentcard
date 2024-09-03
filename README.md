@@ -20,6 +20,8 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* Followed tutorial www.ralfebert.com/tutorials/rails-deployment 
+    - DigitalOcean droplet server
+    - Installed rbenv 
 
 * ...
